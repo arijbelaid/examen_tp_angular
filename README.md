@@ -1,4 +1,3 @@
-                                                        Examen Pratique : Développement Full Stack
 Description
 
 Ce projet est un exemple d'application Full Stack pour un examen.
@@ -10,12 +9,14 @@ Prérequis
 
 Node.js + npm
 
-Angular CLI (npm i -g @angular/cli)
+Angular CLI
+
+npm i -g @angular/cli
 
 1. Création du projet Angular
 # Crée un nouveau projet Angular avec routing et CSS
-ng new exam-nom --routing --style=css
-cd exam-nom
+ng new exam-arij-belaid --routing --style=css
+cd exam-arij-belaid
 
 
 Description :
@@ -72,7 +73,7 @@ login : page de connexion simple.
 
 La barre de navigation permet de passer entre la liste des posts et la page de login.
 
-Le router-outlet sert de conteneur dynamique où les composants seront affichés selon la route.
+Le router-outlet sert de conteneur dynamique où les composants sont affichés selon la route.
 
 6. Routes Angular
 
@@ -100,7 +101,9 @@ Installe Express pour le serveur et CORS pour autoriser les requêtes cross-orig
 
 2. Création du serveur Express (server.js)
 
-Serveur sur le port 3000.
+Description :
+
+Crée un serveur sur le port 3000.
 
 API GET /postList retourne une liste de posts.
 
@@ -109,7 +112,7 @@ Sert le build Angular depuis /www.
 Toutes les autres routes renvoient index.html (support SPA Angular).
 
 3. Lancer le serveur
-# depuis le dossier backend
+# Depuis le dossier backend
 node server.js
 # ou via le script npm
 npm start
@@ -119,7 +122,7 @@ Partie III — Lier Front-end & Back-end
 
 Permet aux services Angular de faire des requêtes HTTP vers le backend.
 
-Ajout dans app.module.ts.
+À ajouter dans app.module.ts.
 
 2. Modifier PostService pour appeler l’API
 
@@ -134,29 +137,10 @@ Récupère les posts via le service et les affiche dans l’Accordion.
 Mise à jour automatique de la vue grâce aux Observables.
 
 4. Générer le build Angular pour le backend
-ng build --prod --output-path=backend/www --base-href ./
-
-
-Génère la version de production Angular dans /backend/www pour que Express puisse la servir.
-
-Git
-git init
-git add .
-git commit -m "Initial commit - frontend angular exam-nom"
-git branch version2
-git checkout version2
-
-# Associer au repo GitHub
-git remote add origin https://github.com/<ton-username>/exam-nom.git
-git push -u origin version2
-git checkout main
-git push -u origin main
+5. 
+ng build --configuration production --output-path=backend/dist/exam-arij-belaid --base-href ./
 
 
 Description :
 
-Initialisation du dépôt Git.
-
-Création d’une branche version2.
-
-Push sur GitHub.
+Génère la version de production Angular dans /backend/www pour que Express puisse la servir.
