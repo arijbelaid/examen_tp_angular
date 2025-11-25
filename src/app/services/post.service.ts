@@ -1,6 +1,7 @@
 // src/app/services/post.service.ts
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 export interface Post { id: string; titre: string; contenu: string; }
 
@@ -14,8 +15,8 @@ export class PostService {
     { id: '3', titre: "Troisième post", contenu: 'détails troisième post' },
   ];
 
-  constructor() {}
-
+  constructor(private http: HttpClient) {}
+   private apiUrl = 'http://localhost:3000/postList'; // ou URL réelle
   getPosts(): Observable<Post[]> {
     return of(this.postList);
   }
